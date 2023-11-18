@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hsa109-mariadb:
+    image: mariadb:11.1
+    environment:
+      - MARIADB_DATABASE=hsa109
+      - MARIADB_USER=hsa109
+      - MARIADB_PASSWORD=letsecretnuqgfhjkm
+      - MARIADB_RANDOM_ROOT_PASSWORD=true
+    volumes:
+      - ./mariadb.cnf:/etc/mysql/my.cnf
+    ports:
+      - 3307:3306
